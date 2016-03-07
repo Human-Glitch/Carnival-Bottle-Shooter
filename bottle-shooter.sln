@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{FA77D99D-919B-2016-EA21-D5CC5755E6BA}") = "bottle-shooter", "Assembly-CSharp.csproj", "{93CAEA25-796E-3563-B35D-4BB7CB1F03F0}"
 EndProject
+Project("{FA77D99D-919B-2016-EA21-D5CC5755E6BA}") = "bottle-shooter", "Assembly-UnityScript.unityproj", "{3EDDE6DB-D420-4E82-C3AA-65CB22A81DFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{93CAEA25-796E-3563-B35D-4BB7CB1F03F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93CAEA25-796E-3563-B35D-4BB7CB1F03F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93CAEA25-796E-3563-B35D-4BB7CB1F03F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EDDE6DB-D420-4E82-C3AA-65CB22A81DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDDE6DB-D420-4E82-C3AA-65CB22A81DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDDE6DB-D420-4E82-C3AA-65CB22A81DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDDE6DB-D420-4E82-C3AA-65CB22A81DFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
