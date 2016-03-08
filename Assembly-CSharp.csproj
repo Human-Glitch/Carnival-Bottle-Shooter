@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{342168D9-B7A4-1802-A89F-CF615AE527B7}</ProjectGuid>
+    <ProjectGuid>{93CAEA25-796E-3563-B35D-4BB7CB1F03F0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\FloorScript.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlatformScript.cs" />
+     <Compile Include="Assets\Scripts\ShootScript.cs" />
      <Compile Include="Assets\Scripts\WallScript.cs" />
      <None Include="Assets\refrences.txt" />
  <Reference Include="UnityEngine.UI">
