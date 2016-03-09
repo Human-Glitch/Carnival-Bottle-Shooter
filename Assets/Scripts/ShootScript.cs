@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ShootScript : MonoBehaviour {
 
-	private static float WAIT_TIME = .3f;
+	public float WAIT_TIME = 1f;
 	float time = 0;
 
 	public Rigidbody projectile;
@@ -22,9 +22,10 @@ public class ShootScript : MonoBehaviour {
 			if (time >= WAIT_TIME) {
 				Rigidbody ball = Instantiate (projectile, shotPos.position, shotPos.rotation) as Rigidbody;
 				ball.AddForce (shotPos.forward * shotForce);
+				GetComponent<AudioSource> ().Play ();
 
 				//After 5 seconds, the ball clone is deleted
-				Destroy (ball.gameObject, 5);
+				//Destroy (ball.gameObject, 5);
 
 				time = 0;
 			}

@@ -50,6 +50,8 @@
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlatformScript.cs" />
      <Compile Include="Assets\Scripts\ShootScript.cs" />
+     <Compile Include="Assets\Scripts\TargetScript.cs" />
+     <Compile Include="Assets\Scripts\UIScript.cs" />
      <Compile Include="Assets\Scripts\WallScript.cs" />
      <None Include="Assets\refrences.txt" />
  <Reference Include="UnityEngine.UI">

@@ -8,6 +8,8 @@ public class PlatformScript : MonoBehaviour {
 	private Rigidbody rb;
 	[SerializeField] public GameObject pyramid;
 	bool scored = false;
+	private int finishedFlag = 0;
+	private float timeToDestruction = 5f;
 
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
@@ -26,12 +28,20 @@ public class PlatformScript : MonoBehaviour {
 				scored = true;
 			}
 		}
+
+		timeToDestruction -= Time.fixedDeltaTime * finishedFlag;
+
+		if (timeToDestruction <= 0) {
+			Destroy (pyramid);
+			Destroy (this.gameObject);
+		}
 	}
 		
 	// Destroys the pyramid and platform 
 	public void Finished() {
-		Destroy (pyramid);
-		Destroy (this.gameObject);
+		finishedFlag = 1;
+		// Destroy (pyramid);
+		// Destroy (this.gameObject);
 	}
 
 	/*

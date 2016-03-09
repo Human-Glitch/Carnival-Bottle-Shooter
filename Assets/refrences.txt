@@ -1,2 +1,31 @@
 targettexture.png (platform texture)
 	from http://www.cs.ucsb.edu/~holl/CS290I/Assignments/Assignments-3/targettexture.png on 3/5
+	
+Blue Bear - Urso de Pelúcia 
+	by FurFab Projetos
+	from https://3dwarehouse.sketchup.com/model.html?id=ue69666b2-719b-4167-b433-751d31eeff22
+
+Stuffed Cow - cow toy 
+	by Ján Kostka
+	from https://3dwarehouse.sketchup.com/model.html?id=u36dc92b2-d303-428f-a005-98e6b3fc8282
+
+GameMusic(the carousel)
+	from https://marcjungermann.bandcamp.com/track/the-carousel
+
+GameMusic(Entry of the gladiators)
+	from https://www.youtube.com/watch?v=_B0CyOAO8y0&list=PLyN0GYQy_cl-4bxf6AbEJvs1ahNcdsrPQ
+
+AirGun
+	from https://www.youtube.com/watch?v=dCRzwTcfv-Q
+
+GlassBottleImpact1
+	cut from https://www.youtube.com/watch?v=kXsI1zQSdP4
+
+GlassBottleImpact2
+	cut from https://www.youtube.com/watch?v=36G8e5lPK-Y
+
+PlasticBottle1
+	cut from https://www.youtube.com/watch?v=ZDyJG3hxK3Q
+
+PlaticBottle2
+	cut from https://www.youtube.com/watch?v=ZDyJG3hxK3Q
