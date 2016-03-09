@@ -21,6 +21,8 @@ public class MouseLook : MonoBehaviour {
 	private float _rotationX = 0;
 	private float _rotationY = 0;
 
+	private float gameOnFlag = 0f;
+
 	// Use this for initialization
 	void Start () {
 		Rigidbody body = GetComponent<Rigidbody> ();
@@ -34,27 +36,37 @@ public class MouseLook : MonoBehaviour {
 	void Update () {
 		
 		//Hides the cursor when playing the game
-		if (Input.GetKeyDown ("space"))
-			Cursor.visible = !Cursor.visible;
+		//if (Input.GetKeyDown ("space"))
+		//	Cursor.visible = !Cursor.visible;
 
 		//Gets Camera input and clamps the angle of the input
 		if (axes == RotationAxes.MouseX) {
-			transform.Rotate (0, Input.GetAxis ("Mouse X") * sensitivityHor, 0);
+			transform.Rotate (0, Input.GetAxis ("Mouse X") * sensitivityHor * gameOnFlag, 0);
 		} 
 		else if (axes == RotationAxes.MouseY) {
-			_rotationX -= Input.GetAxis ("Mouse Y") * sensitivityVert;
+			_rotationX -= Input.GetAxis ("Mouse Y") * sensitivityVert * gameOnFlag;
 			_rotationX = Mathf.Clamp (_rotationX, minimumVert, maximumVert);
 
 		} 
 		else {
-			_rotationX -= Input.GetAxis ("Mouse Y") * sensitivityVert;
+			_rotationX -= Input.GetAxis ("Mouse Y") * sensitivityVert * gameOnFlag;
 			_rotationX = Mathf.Clamp (_rotationX, minimumVert, maximumVert);
 
-			_rotationY -= Input.GetAxis ("Mouse X") * sensitivityHor;
+			_rotationY -= Input.GetAxis ("Mouse X") * sensitivityHor * gameOnFlag;
 			_rotationY = Mathf.Clamp (_rotationY, minimumHoriz, maximumHoriz);
 
 			transform.localEulerAngles = new Vector3 (_rotationX, -(_rotationY), 0);
 		}
 	
+	}
+
+	public void StartGame() {
+		gameOnFlag = 1f;
+		Cursor.visible = false;
+	}
+
+	public void StopGame() {
+		gameOnFlag = 0f;
+		Cursor.visible = true;
 	}
 }

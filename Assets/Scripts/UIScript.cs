@@ -15,6 +15,10 @@ public class UIScript : MonoBehaviour {
     private float score = 0;
     private bool gameStart = false;
 
+	public ShootScript shooter;
+	public MouseLook mouse;
+	public BottleSpawnScript spawner;
+
 	// Use this for initialization
 	void Start () {
         // Hide game over objects
@@ -51,8 +55,9 @@ public class UIScript : MonoBehaviour {
     // Method for when game ends
     void gameOver()
     {
+		StopGame ();
         // Unhide game over objects
-        gameOverPanel.SetActive(true);
+		gameOverPanel.SetActive(true);
         GameOverText.gameObject.SetActive(true);
         if (score > highScore) // Check if hide score
         {
@@ -68,6 +73,7 @@ public class UIScript : MonoBehaviour {
         currentTime = 0;
         gameOverPanel.SetActive(false);
         score = 0;
+		StartGame ();
     }
 
     // Method for not playing again :ISSUE, APPLICATION.QUIT NOT WORKING:
@@ -79,8 +85,20 @@ public class UIScript : MonoBehaviour {
     // Method for beginning the game
     public void startButton()
     {
-		print ("Start");
         startGamePanel.SetActive(false);
-        gameStart = true;
+		gameStart = true;
+		StartGame ();
     }
+
+	public void StartGame() {
+		shooter.StartGame();
+		mouse.StartGame();
+		spawner.StartGame();
+	}
+
+	public void StopGame() {
+		shooter.StopGame();
+		mouse.StopGame();
+		spawner.StopGame();
+	}
 }

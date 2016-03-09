@@ -10,6 +10,8 @@ public class ShootScript : MonoBehaviour {
 	public Transform shotPos;	//eventually will hold end of barrel location
 	public float shotForce = 1000f;
 
+	private bool gameOn = false;
+
 	void Start() {
 	}
 
@@ -18,7 +20,7 @@ public class ShootScript : MonoBehaviour {
 		
 		//the second argument in the Instantiate() function should be barrel of gun when finished
 		//May want to eventually set a time limit between refire
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButtonDown(0) && gameOn){
 			if (time >= WAIT_TIME) {
 				Rigidbody ball = Instantiate (projectile, shotPos.position, shotPos.rotation) as Rigidbody;
 				ball.AddForce (shotPos.forward * shotForce);
@@ -34,5 +36,14 @@ public class ShootScript : MonoBehaviour {
 
 	}
 
+
+	public void StartGame()
+	{
+		gameOn = true;
+	}
+
+	public void StopGame() {
+		gameOn = false;
+	}
 
 }

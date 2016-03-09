@@ -22,6 +22,12 @@ public class BottleSpawnScript : MonoBehaviour {
 	// Time until next object is created
 	private float timeToSpawn = 0f;
 
+	// Are we playing the game?
+	public bool gameOn = false;
+
+	// UI passed to platforms for scoring
+	[SerializeField] private UIScript ui;
+
 	//Initialization
 	void Start () {
 
@@ -34,8 +40,6 @@ public class BottleSpawnScript : MonoBehaviour {
 		targets [0] = Resources.Load ("Platform") as GameObject;
 
 		//targets [1] = Resources.Load ("Target1Test") as GameObject;
-
-
 	}
 	
 	// Update is called once per frame
@@ -46,7 +50,7 @@ public class BottleSpawnScript : MonoBehaviour {
 
 
 		// If countdown hits zero and we are automatically spawning
-		if (timeToSpawn <= 0 && spawnTime >= 0) {
+		if (timeToSpawn <= 0 && spawnTime >= 0 && gameOn) {
 
 			//reset countdown
 			timeToSpawn = spawnTime;
@@ -67,12 +71,13 @@ public class BottleSpawnScript : MonoBehaviour {
 		if (num == 6)
 			num = 5;
 
-		num = 1;
+		//num = 1;
 		// Offset for each object from its center. Depends on the object. Probably shouldn't be hardcoded, but I don't want to put it anywhere else.
+		// Turns out we don't actually need them. I'm a moron.
 		float objX = 0f;
 		float objY = 0f;
 		float objZ = 0f;
-
+		/*
 		switch (num) {
 			case 1:
 				// Milk Bottles
@@ -111,16 +116,24 @@ public class BottleSpawnScript : MonoBehaviour {
 
 			default:
 				break;
-		}
+		}*/
 
 		// Create pyramid
-		GameObject target = Instantiate(targets[num], new Vector3(objX + xOffset, objY + yOffset, objZ + zOffset), Quaternion.identity) as GameObject;
+		GameObject target = Instantiate(targets[num], new Vector3(xOffset, yOffset, zOffset), Quaternion.identity) as GameObject;
 		//GameObject target = Instantiate(targets[1], new Vector3(-0.91f + xOffset, -1.52f + yOffset, -17.73f + zOffset), Quaternion.identity) as GameObject;
 
 		// Create platform and tell it the speed & its pyramid
 		GameObject platform = Instantiate (targets [0], new Vector3 (xOffset, yOffset, zOffset), Quaternion.identity) as GameObject;
 		platform.GetComponent<PlatformScript> ().speed = speed;
 		platform.GetComponent<PlatformScript> ().pyramid = target;
+		platform.GetComponent<PlatformScript> ().ui = ui;
+		platform.GetComponent<PlatformScript> ().spawner = this;
+
+		TargetScript[] ts = target.GetComponentsInChildren<TargetScript> ();
+		for (int x = 0; x < ts.Length; x++) {
+			ts [x].platform = platform;
+			ts [x].LockPlatformOffset();
+		}
 
 		// Setting the speed of every object in the pyramid to the initial speed. 
 		// Otherwise the sudden jerk would be enough to knock the pyramid down.
@@ -135,5 +148,13 @@ public class BottleSpawnScript : MonoBehaviour {
 		/*Rigidbody rigidbody = target.GetComponent<Rigidbody> ();
 		rigidbody.AddForce(new Vector3(speed, 0f, 0f));*/
 
+	}
+
+	public void StartGame() {
+		gameOn = true;
+	}
+
+	public void StopGame() {
+		gameOn = false;
 	}
 }

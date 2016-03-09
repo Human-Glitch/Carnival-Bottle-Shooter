@@ -10,6 +10,8 @@ public class PlatformScript : MonoBehaviour {
 	bool scored = false;
 	private int finishedFlag = 0;
 	private float timeToDestruction = 5f;
+	public UIScript ui;
+	public BottleSpawnScript spawner;
 
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
@@ -19,11 +21,21 @@ public class PlatformScript : MonoBehaviour {
 		// Responsible for the platform moving. 
 		rb.velocity = new Vector3 (speed, 0f, 0f);
 
+		if (!spawner.gameOn) {
+			Destroy (pyramid);
+			Destroy (this.gameObject);
+		}
 		// Scores once all bottles are destroyed
-		if (!scored) {
-			Rigidbody[] children = pyramid.GetComponentsInChildren<Rigidbody> ();
-			if (children.Length == 0 && !scored) {
+		else if (!scored) {
+			TargetScript[] children = pyramid.GetComponentsInChildren<TargetScript> ();
+			/*if (children.Length == 0 && !scored) {
 				// Score!
+				print("Score!");
+				scored = true;
+			}*/
+
+			if(AreOff(children)) {
+				ui.playerScored ();
 				print("Score!");
 				scored = true;
 			}
@@ -53,4 +65,13 @@ public class PlatformScript : MonoBehaviour {
 		}
 		return b;
 	}*/
+
+	public bool AreOff(TargetScript[] obj) {
+		for (int x = 0; x < obj.Length; x++) {
+			if (obj[x].CloseToHome()) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
