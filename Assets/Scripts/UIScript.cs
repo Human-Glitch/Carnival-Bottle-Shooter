@@ -10,6 +10,7 @@ public class UIScript : MonoBehaviour {
     public GameObject startGamePanel;
     public Text GameOverText;
     public Text FinalScoreText;
+	public Text NewHighScoreText;
     private float currentTime;
     private float highScore = 0;
     private float score = 0;
@@ -25,6 +26,7 @@ public class UIScript : MonoBehaviour {
         GameOverText.gameObject.SetActive(false);
         FinalScoreText.gameObject.SetActive(false);
         gameOverPanel.SetActive(false);
+		NewHighScoreText.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -59,10 +61,12 @@ public class UIScript : MonoBehaviour {
         // Unhide game over objects
 		gameOverPanel.SetActive(true);
         GameOverText.gameObject.SetActive(true);
-        if (score > highScore) // Check if hide score
-        {
-            highScore = score;
-        }
+		if (score > highScore) { // Check if hide score
+			highScore = score;
+			NewHighScoreText.enabled = true;
+		} else {
+			NewHighScoreText.enabled = false;
+		}
         FinalScoreText.gameObject.SetActive(true);
         FinalScoreText.text = string.Format("Final Score: {0}\n High Score: {1}", score, highScore); // Display final score
     }
@@ -71,8 +75,9 @@ public class UIScript : MonoBehaviour {
     public void yesButton()
     {
         currentTime = 0;
-        gameOverPanel.SetActive(false);
-        score = 0;
+		gameOverPanel.SetActive(false);
+		score = 0;
+		ScoreText.text = string.Format("Score: {0}", score);
 		StartGame ();
     }
 
@@ -84,7 +89,8 @@ public class UIScript : MonoBehaviour {
 
     // Method for beginning the game
     public void startButton()
-    {
+	{
+		NewHighScoreText.enabled = false;
         startGamePanel.SetActive(false);
 		gameStart = true;
 		StartGame ();
