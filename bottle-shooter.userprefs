@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\refrences.txt">
     <Files>
-      <File FileName="Assets\refrences.txt" Line="1" Column="1" />
+      <File FileName="Assets\refrences.txt" Line="34" Column="48" />
       <File FileName="Assets\Scripts\UIScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\FloorScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MouseLook.cs" Line="1" Column="1" />

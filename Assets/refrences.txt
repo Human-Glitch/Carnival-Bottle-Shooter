@@ -29,3 +29,6 @@ PlasticBottle1
 
 PlaticBottle2
 	cut from https://www.youtube.com/watch?v=ZDyJG3hxK3Q
+
+Plus sign (reticle)
+	from http://pixgood.com/plus-sign-clipart.html
