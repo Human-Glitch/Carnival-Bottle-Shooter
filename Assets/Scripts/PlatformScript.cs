@@ -36,7 +36,7 @@ public class PlatformScript : MonoBehaviour {
 
 			if(AreOff(children)) {
 				ui.playerScored ();
-				print("Score!");
+				//print("Score!");
 				scored = true;
 			}
 		}

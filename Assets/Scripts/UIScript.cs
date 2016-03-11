@@ -26,11 +26,12 @@ public class UIScript : MonoBehaviour {
         GameOverText.gameObject.SetActive(false);
         FinalScoreText.gameObject.SetActive(false);
         gameOverPanel.SetActive(false);
-		NewHighScoreText.enabled = false;
+		//NewHighScoreText.enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
         if (gameStart == true) // Wait for start button
         {
             // Increment game clock
@@ -57,6 +58,7 @@ public class UIScript : MonoBehaviour {
     // Method for when game ends
     void gameOver()
     {
+		gameStart = false;
 		StopGame ();
         // Unhide game over objects
 		gameOverPanel.SetActive(true);
@@ -78,6 +80,7 @@ public class UIScript : MonoBehaviour {
 		gameOverPanel.SetActive(false);
 		score = 0;
 		ScoreText.text = string.Format("Score: {0}", score);
+		gameStart = true;
 		StartGame ();
     }
 
@@ -90,7 +93,7 @@ public class UIScript : MonoBehaviour {
     // Method for beginning the game
     public void startButton()
 	{
-		NewHighScoreText.enabled = false;
+		//NewHighScoreText.enabled = false;
         startGamePanel.SetActive(false);
 		gameStart = true;
 		StartGame ();

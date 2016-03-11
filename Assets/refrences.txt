@@ -29,6 +29,15 @@ PlasticBottle1
 
 PlaticBottle2
 	cut from https://www.youtube.com/watch?v=ZDyJG3hxK3Q
+	
+WoodenCrate
+	from https://www.youtube.com/watch?v=EmyhaD8uVn8
+
+MetalCan
+	cut from https://www.youtube.com/watch?v=RlXaMUxSZqs
+
+WoddenBarrel
+	cut from https://www.youtube.com/watch?v=ddG9T9VBSgo&index=99&list=PLUSRfoOcUe4ZUYwOlrURefaKxCtTH--Lj
 
 Plus sign (reticle)
 	from http://pixgood.com/plus-sign-clipart.html

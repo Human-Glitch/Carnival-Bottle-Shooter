@@ -74,10 +74,10 @@ public class BottleSpawnScript : MonoBehaviour {
 		//num = 1;
 		// Offset for each object from its center. Depends on the object. Probably shouldn't be hardcoded, but I don't want to put it anywhere else.
 		// Turns out we don't actually need them. I'm a moron.
+		/*
 		float objX = 0f;
 		float objY = 0f;
 		float objZ = 0f;
-		/*
 		switch (num) {
 			case 1:
 				// Milk Bottles
