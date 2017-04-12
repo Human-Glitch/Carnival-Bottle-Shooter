@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\refrences.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BottleSpawnScript.cs">
     <Files>
-      <File FileName="Assets\refrences.txt" Line="34" Column="48" />
-      <File FileName="Assets\Scripts\UIScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BottleSpawnScript.cs" Line="161" Column="1" />
+      <File FileName="Assets\Scripts\MovingLight.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\FloorScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\refrences.txt" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UIScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MouseLook.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ShootScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TargetScript.cs" Line="1" Column="1" />
